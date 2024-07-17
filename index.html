@@ -3,122 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metaverse-Inspired Webpage</title>
+    <title>AI Video Metaverse Experience</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #1a2a6c, #b21f1f, #fdbb2d);
-            height: 100vh;
+            font-family: 'Arial', sans-serif;
             overflow: hidden;
+            perspective: 1000px;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            height: 100vh;
             color: white;
         }
-        .container {
-            display: flex;
+        .metaverse-container {
+            transform-style: preserve-3d;
             height: 100vh;
-        }
-        .sidebar {
-            width: 200px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-        }
-        .main-content {
-            flex-grow: 1;
-            padding: 20px;
             position: relative;
         }
-        .code-panel {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .video-container {
+        .floor {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 320px;
-            height: 180px;
-            border: 2px solid white;
-            border-radius: 10px;
-            overflow: hidden;
+            bottom: -50vh;
+            left: -50vw;
+            width: 200vw;
+            height: 200vh;
+            background: linear-gradient(45deg, #228B22, #32CD32);
+            transform: rotateX(60deg);
         }
-        .menu-item {
-            background: rgba(255, 255, 255, 0.1);
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
+        .ui-panel {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 40%;
+            height: 60%;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            transform: rotateY(-10deg);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
         .code-block {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
             padding: 10px;
             margin: 10px 0;
+            font-family: monospace;
+        }
+        .video-container {
+            position: absolute;
+            bottom: 10%;
+            right: 5%;
+            width: 40%;
+            height: 40%;
+            transform: rotateY(10deg);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
         }
         .floating-menu {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 5px;
+            top: 5%;
+            right: 5%;
+            display: flex;
+            gap: 10px;
         }
-        .floating-menu button {
-            background: none;
-            border: 1px solid white;
-            color: white;
-            padding: 5px 10px;
-            margin: 0 5px;
-            border-radius: 3px;
+        .menu-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-5px);
+        }
+        .tree {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            background: #228B22;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <div class="menu-item">Home</div>
-            <div class="menu-item">Explore</div>
+    <div class="metaverse-container">
+        <div class="floor"></div>
+        <div class="ui-panel">
+            <h2>AI Video Scripter</h2>
+            <div class="code-block">
+                function generateVideo() {
+                    // AI magic happens here
+                    return aiGeneratedContent;
+                }
+            </div>
+            <div class="code-block">
+                if (userInput) {
+                    processAIRequest(userInput);
+                } else {
+                    suggestVideoIdeas();
+                }
+            </div>
+        </div>
+        <div class="video-container">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="floating-menu">
             <div class="menu-item">Create</div>
+            <div class="menu-item">Explore</div>
             <div class="menu-item">Settings</div>
         </div>
-        <div class="main-content">
-            <div class="code-panel">
-                <h3>Code Editor</h3>
-                <div class="code-block">function createObject() {
-    // Your code here
-}</div>
-                <div class="code-block">if (condition) {
-    // Do something
-} else {
-    // Do something else
-}</div>
-            </div>
-            <div class="floating-menu">
-                <button>Control</button>
-                <button>Events</button>
-                <button>Objects</button>
-            </div>
-            <div class="video-container">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-        </div>
+        <div class="tree" style="bottom: 10%; left: 20%;"></div>
+        <div class="tree" style="bottom: 15%; left: 25%;"></div>
+        <div class="tree" style="bottom: 12%; right: 22%;"></div>
     </div>
 
     <script>
-        // Add interactivity here
         document.querySelectorAll('.menu-item').forEach(item => {
             item.addEventListener('click', () => {
-                alert('You clicked: ' + item.textContent);
+                alert(`Entering ${item.textContent} mode in the AI Video Metaverse!`);
             });
         });
 
-        document.querySelectorAll('.floating-menu button').forEach(button => {
-            button.addEventListener('click', () => {
-                alert('You selected: ' + button.textContent);
-            });
+        // Add some parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const depth = 5;
+            const moveX = (e.clientX - window.innerWidth / 2) / depth;
+            const moveY = (e.clientY - window.innerHeight / 2) / depth;
+            document.querySelector('.metaverse-container').style.transform = `translate(${moveX}px, ${moveY}px)`;
         });
     </script>
 </body>
