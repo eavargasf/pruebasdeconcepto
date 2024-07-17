@@ -1,4 +1,6 @@
-// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("VR World UI loaded");
+    // Future interactive features can be added here
+});
 
-document.getElementById('video').src += "?autoplay=1&mute=1";
 
