@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Experience</title>
+    <title>Virtual World UI</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>AI Video Experience</h1>
-    </header>
-    <main>
-        <section class="virtual-environment">
-            <div class="overlay">
-                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                <div class="interface">
-                    <div class="avatar"></div>
-                    <div class="commands">
-                        <div class="command"></div>
-                        <div class="command"></div>
-                    </div>
+    <div class="container">
+        <div class="vr-world">
+            <div class="avatar" id="avatar1"></div>
+            <div class="avatar" id="avatar2"></div>
+            <div class="floating-ui" id="ui1">
+                <div class="ui-content">
+                    <h3>Settings</h3>
+                    <ul>
+                        <li>Position</li>
+                        <li>Rotation</li>
+                        <li>Scale</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-    </main>
-    <script src="script.js"></script>
+            <div class="floating-ui" id="ui2">
+                <div class="ui-content">
+                    <h3>Control</h3>
+                    <ul>
+                        <li>if</li>
+                        <li>while</li>
+                        <li>Events</li>
+                        <li>Collision Events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
+
 
 
