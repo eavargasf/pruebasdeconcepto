@@ -1,91 +1,60 @@
-body, html {
+* {
     margin: 0;
     padding: 0;
-    width: 100%;
+    box-sizing: border-box;
+}
+
+body, html {
     height: 100%;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #fff;
+    font-family: 'Arial', sans-serif;
+    background: url('images/meta.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
 }
 
-.vr-world {
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+}
+
+.video-wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80%;
-    background: url('meta.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.avatar {
-    position: absolute;
-    width: 100px;
-    height: 150px;
-    background: rgba(255, 255, 255, 0.1);
+    height: 100%;
     border-radius: 10px;
 }
 
-#avatar1 {
-    top: 20%;
-    left: 30%;
-    background: url('avatar1.png') no-repeat center center/cover;
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
 }
 
-#avatar2 {
-    top: 50%;
-    left: 20%;
-    background: url('avatar2.png') no-repeat center center/cover;
-}
-
-.floating-ui {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-#ui1 {
-    top: 15%;
-    left: 55%;
-}
-
-#ui2 {
-    top: 40%;
-    left: 60%;
-}
-
-.ui-content h3 {
-    margin: 0 0 10px 0;
-}
-
-.ui-content ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.ui-content ul li {
-    margin: 5px 0;
-}
-
-.video-container {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.8);
-}
 
