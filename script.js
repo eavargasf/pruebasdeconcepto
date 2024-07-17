@@ -1,7 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("VR World UI loaded");
-    // Future interactive features can be added here
-});
+// Add any JavaScript functionality here if needed
+// For now, this is empty as the page is mainly static
 
 
 
